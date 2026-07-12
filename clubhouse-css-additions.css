@@ -1,0 +1,19 @@
+/* ============================================================
+   CSS ADDITIONS FOR programs-clubhouse-community.html
+   Add these two rules anywhere in your live style.css.
+   (They are new, page-specific rules — they won't affect any
+   other page, and won't overwrite anything already in your file.)
+   ============================================================ */
+
+/* 3-across variant for desktop only — used by the "What You Will Find
+   Here" cards on the Clubhouse page. Falls back to the normal responsive
+   .pillars behavior below 900px, so mobile is unaffected. */
+@media (min-width: 901px) {
+  .pillars.cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Slightly larger paragraph text for the "Who Is the Clubhouse For?"
+   cards on the Clubhouse page only. */
+.who-for-grid .value-card p {
+  font-size: 1.06rem;
+}
