@@ -153,8 +153,8 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   color: var(--navy);
   letter-spacing: 0.02em;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+/*  padding-bottom: 4px;
+  border-bottom: 2px solid transparent; */
   white-space: nowrap;
 }
 
