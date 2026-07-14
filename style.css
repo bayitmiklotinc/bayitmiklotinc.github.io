@@ -469,10 +469,25 @@ img { max-width: 100%; display: block; }
   border-color: var(--taupe);
 }
 
+/*CSS FOR IMAGE PLACEHOLDER CODE IN class="hero-picture" line 64 index.html*/
+.picture-frame .frame-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .picture-frame .frame-icon {
   width: 30%;
   max-width: 74px;
   opacity: 0.55;
+}
+
+.picture-frame .frame-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .picture-frame .frame-caption {
