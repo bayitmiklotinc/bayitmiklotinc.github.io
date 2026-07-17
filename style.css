@@ -1418,9 +1418,11 @@ a.pillar-card:hover {
 
 .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
 
-/* DAF button: reversed color order from the standard primary button — starts teal, hovers to coral */
+/* DAF and DF buttons: reversed color order from the standard primary button — starts teal, hovers to coral */
 .btn-daf { background: var(--teal); }
 .btn-daf:hover { background: var(--coral); }
+.btn-donor { background: var(--teal); }
+.btn-donor:hover { background: var(--coral); }
 
 .give-list {
   list-style: none;
