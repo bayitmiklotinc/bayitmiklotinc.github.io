@@ -1616,6 +1616,7 @@ a.pillar-card:hover {
   max-width: 760px;
   padding: 40px 28px;
   text-align: center;
+/* added this css for the background image to show up in the photo quote section */
   background-image: url('assets/si/img1.png');
   background-repeat: no-repeat;
   background-position: center; 
