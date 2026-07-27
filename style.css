@@ -1599,8 +1599,17 @@ a.pillar-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+/*
   background: linear-gradient(135deg, var(--aqua-wash) 0%, var(--soft-aqua) 55%, var(--teal) 130%);
   overflow: hidden;
+*/
+/* added this css for the background image to show up in the photo quote section */
+  background-image: url('assets/si/img1.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  padding: 40px; 
+  border-radius: 8px;
 }
 
 .photo-quote::after {
@@ -1616,13 +1625,6 @@ a.pillar-card:hover {
   max-width: 760px;
   padding: 40px 28px;
   text-align: center;
-/* added this css for the background image to show up in the photo quote section */
-  background-image: url('assets/si/img1.png');
-  background-repeat: no-repeat;
-  background-position: center; 
-  background-size: cover;
-  padding: 40px; 
-  border-radius: 8px;
 }
 
 .photo-quote-overlay blockquote {
