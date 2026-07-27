@@ -1616,6 +1616,12 @@ a.pillar-card:hover {
   max-width: 760px;
   padding: 40px 28px;
   text-align: center;
+  background-image: url('assets/si/img1.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  padding: 40px; 
+  border-radius: 8px;
 }
 
 .photo-quote-overlay blockquote {
