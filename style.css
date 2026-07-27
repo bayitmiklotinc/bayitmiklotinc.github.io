@@ -1410,7 +1410,7 @@ a.pillar-card:hover {
   background: transparent;
   color: var(--navy);
   font-weight: 600;
-  padding: 18px 30px;
+  padding: 20px 30px;
   border-radius: 999px;
   border: 1.5px solid var(--navy);
   font-size: 0.95rem;
