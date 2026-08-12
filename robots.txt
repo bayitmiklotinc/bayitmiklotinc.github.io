@@ -1,0 +1,23 @@
+# Allow all standard web crawlers
+User-agent: *
+Allow: /
+
+# Allow OpenAI (ChatGPT training and live search)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Allow Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Allow Google AI (Gemini and AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://bayitmiklotinc.github.io/sitemap.xml
