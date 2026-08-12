@@ -11,6 +11,8 @@ Allow: /
 # Allow Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
+User-agent: anthropic-ai
+Allow: /
 
 # Allow Google AI (Gemini and AI Overviews)
 User-agent: Google-Extended
