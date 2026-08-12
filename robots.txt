@@ -20,4 +20,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://bayitmiklotinc.github.io/sitemap.xml
+#Sitemap: https://bayitmiklotinc.github.io/sitemap.xml
