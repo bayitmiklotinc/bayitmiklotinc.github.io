@@ -1,0 +1,51 @@
+# PROPOSED _config.yml (repo root). GitHub Pages already builds this repo with
+# Jekyll by default; this file just turns on includes, SEO, sitemap and feeds.
+title: "Bayit Miklot — Home of Refuge"
+tagline: "Jewish Recovery & Mental Health Community in Dallas"
+description: >-
+  Bayit Miklot is a Dallas, Texas nonprofit that combines Jewish recovery
+  housing, addiction recovery support, clinical mental health care, and
+  lifelong community under one roof.
+url: "https://bayitmiklot.com"
+baseurl: ""
+lang: en_US
+locale: en_US
+logo: /assets/logo.png
+social:
+  name: Bayit Miklot
+  links: []            # add Facebook / Instagram / LinkedIn / YouTube profile URLs
+defaults:
+  - scope: { path: "" }
+    values:
+      layout: default
+      image: /assets/si/img1.png   # interim; replace with /assets/og/default-1200x630.jpg (task SEO-07)
+  - scope: { path: "", type: press }
+    values:
+      layout: press-release
+      permalink: /press/:year/:month/:title/
+
+# Current URLs (about-our-story.html etc.) stay exactly the same: Jekyll keeps
+# each .html page at its own path, so no rankings or inbound links are lost.
+
+collections:
+  press:
+    output: true
+
+plugins:            # all three are on the GitHub Pages allow-list
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  collections:
+    press:
+      path: "/press/feed.xml"   # Postiz watches this feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - clubhouse-css-additions.css
+  - clubhouse-standalone_7.html  # 560 KB duplicate of the Clubhouse page
+  - tools/
+  - _proposals/

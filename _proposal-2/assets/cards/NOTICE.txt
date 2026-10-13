@@ -1,0 +1,2 @@
+Card icons: "flat-rounded" set from https://github.com/aaronfagan/svg-credit-card-payment-icons
+Licensed under the Apache License 2.0 (see LICENSE.txt). The card brand names and logos are trademarks of their owners and are shown only to indicate accepted payment methods.

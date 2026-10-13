@@ -1,0 +1,27 @@
+{%- assign org = site.data.org -%}
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-card">
+          <img src="/assets/logo.png" alt="Bayit Miklot — Home of Refuge" width="1022" height="230" loading="lazy" decoding="async">
+        </div>
+        <p class="footer-tagline">Home of Refuge. Community for Life.&trade;</p>
+        <p class="footer-endorsement">Endorsed by leading Orthodox congregations and rabbinical leaders of the Dallas Jewish community.</p>
+        <a href="/donate.html" class="footer-donate">Donate</a>
+      </div>
+      <div class="footer-contact">
+        <div class="name">{{ org.contact_name }}</div>
+        <div class="role">{{ org.contact_role }}</div>
+        <a href="tel:{{ org.phone }}">{{ org.phone_display }}</a>
+        <a href="mailto:{{ org.email }}">{{ org.email }}</a>
+        <address class="footer-address">{{ org.city }}, {{ org.region }}</address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Bayit Miklot &mdash; Home of Refuge | Making Connections. Saving Lives.</span>
+      <span>501(c)(3) nonprofit &middot; &copy; {{ site.time | date: '%Y' }}</span>
+      <a href="/press/">Press</a>
+    </div>
+  </div>
+</footer>

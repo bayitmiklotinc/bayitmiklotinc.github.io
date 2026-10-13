@@ -1,0 +1,38 @@
+# Proposed keyword-led titles (<= 60 chars before the " | Bayit Miklot..." suffix)
+# and descriptions (<= 155 chars). Review wording with leadership before use.
+index.html:
+  title: "Jewish Addiction Recovery & Mental Health Care in Dallas, TX"
+  description: "Bayit Miklot is a Dallas nonprofit offering Jewish recovery housing, addiction recovery support, clinical mental health care and lifelong community."
+residential-housing.html:
+  title: "Jewish Sober Living & Recovery Housing in Dallas"
+  description: "Kosher, structured recovery residences in Dallas offering stability, accountability, Jewish community and a path back to independent living."
+programs-clinical-care.html:
+  title: "Jewish Mental Health & Clinical Care in Dallas"
+  description: "Evidence-based therapy and psychiatric care coordinated by licensed professionals, delivered with Jewish values and community support in Dallas."
+programs-recovery-program.html:
+  title: "Addiction Recovery Program for the Jewish Community"
+  description: "A whole-person addiction and mental health recovery program in Dallas: mentorship, life skills, purpose, and a community that stays with you."
+programs-clubhouse-community.html:
+  title: "The Clubhouse: Jewish Recovery Community Space in Dallas"
+  description: "A free, always-open Dallas clubhouse with a kosher kitchen where people in recovery find friendship, purpose and belonging without stigma."
+programs-community-for-life.html:
+  title: "Community for Life: Lifelong Recovery Support"
+  description: "Recovery does not end at move-out. Alumni stay connected through mentorship, celebrations, support and opportunities to give back."
+who-we-serve.html:
+  title: "Who We Serve: Jewish Adults Facing Addiction & Mental Illness"
+  description: "Bayit Miklot supports Jewish individuals and families in Dallas facing addiction, mental illness, trauma and life transitions. Learn who we help."
+about-our-story.html:
+  title: "Our Story: A Jewish Home of Refuge in Dallas"
+  description: "How one home in Dallas became Bayit Miklot, joining clinical care, safe housing, purpose, Jewish values and community into one recovery journey."
+about-our-founder.html:
+  title: "Meet Avi Herman, Founder and Executive Director"
+  description: "Avi Herman's own recovery led him to found Bayit Miklot, a Dallas home of refuge for Jewish recovery and mental health. Read his story."
+about-our-approach.html:
+  title: "Our Approach: Integrated, Whole-Person Recovery Care"
+  description: "Clinical care, housing, purpose, Torah values and community, woven together. Learn the integrated care philosophy behind Bayit Miklot."
+get-involved.html:
+  title: "Volunteer & Partner With a Jewish Recovery Nonprofit"
+  description: "Volunteer, become a corporate or synagogue partner, or join as a founding partner of Bayit Miklot's Jewish recovery community in Dallas."
+donate.html:
+  title: "Donate to Jewish Recovery & Mental Health Care in Dallas"
+  description: "Your tax-deductible gift to Bayit Miklot, a 501(c)(3), funds safe housing, clinical care and lifelong community for people rebuilding their lives."

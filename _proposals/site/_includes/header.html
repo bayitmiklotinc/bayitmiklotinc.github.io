@@ -1,0 +1,40 @@
+{%- comment -%}
+  Site header. Menu items come from _data/navigation.yml, and the active
+  state is computed from the page URL, so no page has to hand-mark "active".
+{%- endcomment -%}
+{%- assign here = page.url | replace: '/index.html', '/' -%}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="logo" aria-label="Bayit Miklot home">
+      <img src="/assets/logo.png" alt="Bayit Miklot — Home of Refuge" width="1022" height="230" fetchpriority="high">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-controls="site-nav">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation -%}
+        {%- assign item_url = item.url | replace: '/index.html', '/' -%}
+        {%- assign is_active = false -%}
+        {%- if here == item_url -%}{%- assign is_active = true -%}{%- endif -%}
+        {%- for child in item.children -%}
+          {%- if here == child.url -%}{%- assign is_active = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if item.url == '/press/' and here contains '/press/' -%}{%- assign is_active = true -%}{%- endif -%}
+        {%- if item.children %}
+      <div class="has-dropdown">
+        <a href="{{ item.url }}"{% if is_active %} class="active"{% endif %} aria-haspopup="true">{{ item.title }}</a>
+        <div class="dropdown">
+          {%- for child in item.children %}
+          <a href="{{ child.url }}" class="{% if child.featured %}featured{% endif %}{% if here == child.url %} active{% endif %}"{% if here == child.url %} aria-current="page"{% endif %}>{{ child.title | escape }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+        {%- else %}
+      <a href="{{ item.url }}" class="{{ item.class }}{% if is_active %} active{% endif %}"{% if is_active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endif -%}
+      {%- endfor %}
+    </nav>
+  </div>
+</header>
