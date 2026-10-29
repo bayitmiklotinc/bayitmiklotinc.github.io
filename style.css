@@ -736,6 +736,12 @@ section.block {
   font-size: 1.4rem;
 }
 
+/* The text column is a flex column, which would stretch buttons to full width.
+   Keep buttons sized to their label, like everywhere else on the site. */
+.split-band .split-text > a {
+  align-self: flex-start;
+}
+
 /* ---------- Pillars ---------- */
 
 .pillars {
