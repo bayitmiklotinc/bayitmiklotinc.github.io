@@ -12,7 +12,12 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lora-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/style.css">
+{%- comment -%}
+  ?v= changes on every build, so browsers always fetch the current stylesheet
+  after a deploy instead of reusing a cached older copy.
+{%- endcomment %}
+<link rel="stylesheet" href="/style.css?v={{ site.time | date: '%s' }}">
+<style>.skip-link{position:absolute;left:12px;top:-100px}.skip-link:focus{top:12px}</style>
 {%- if page.hero_image %}
 <link rel="preload" as="image" href="{{ page.hero_image }}" type="image/webp" fetchpriority="high">
 {%- endif %}
