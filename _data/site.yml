@@ -1,0 +1,21 @@
+# Organization facts used across the site. Edit them here once.
+legal_name: Bayit Miklot Inc.
+short_name: Bayit Miklot
+ein: 33-4022406
+email: info@bayitmiklot.com
+phone: "+19176762014"          # used in tel: links
+phone_display: "917‑676‑2014"   # non-breaking hyphens keep the number on one line
+city: Dallas
+region: Texas
+region_code: TX
+tagline: "Home of Refuge. Community for Life™."
+slogan: "Making Connections. Saving Lives."
+endorsement: "Endorsed by leading Orthodox congregations and rabbinical leaders of the Dallas Jewish community."
+
+# Shown only in the footer of about-our-founder.html (front matter: footer_contact: founder)
+founder:
+  name: Avi Herman
+  title: Founder & Executive Director
+  email: avi@bayitmiklot.com
+
+google_ads_id: AW-18250880976

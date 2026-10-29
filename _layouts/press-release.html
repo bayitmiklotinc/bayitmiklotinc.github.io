@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign org = site.data.site -%}
+<section class="block on-white press-release">
+  <article class="container" itemscope itemtype="https://schema.org/NewsArticle">
+    <a href="/press/" class="kicker">&larr; Press Releases</a>
+    <p class="press-dateline">
+      <strong>{{ page.dateline | default: "DALLAS, TX" }}</strong> &mdash;
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </p>
+    <h1 itemprop="headline">{{ page.title }}</h1>
+    {%- if page.subtitle %}
+    <p class="lede">{{ page.subtitle }}</p>
+    {%- endif %}
+    {%- if page.image %}
+    <figure class="picture-frame landscape">
+      <img class="frame-image" src="{{ page.image }}" alt="{{ page.image_alt | default: '' }}" width="1200" height="675" itemprop="image">
+    </figure>
+    {%- endif %}
+    <div class="press-body" itemprop="articleBody">
+      {{ content }}
+    </div>
+    <section class="press-boilerplate">
+      <h2>About Bayit Miklot</h2>
+      <p>{{ site.description }}</p>
+      <h2>Media Contact</h2>
+      <p>{{ org.legal_name }}<br>
+        <a href="mailto:{{ org.email }}">{{ org.email }}</a> &middot;
+        <a href="tel:{{ org.phone }}">{{ org.phone_display }}</a></p>
+    </section>
+    <meta itemprop="author" content="{{ org.legal_name }}">
+  </article>
+</section>

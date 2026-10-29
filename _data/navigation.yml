@@ -1,0 +1,24 @@
+# Main menu. The highlighted ("active") item is worked out automatically.
+- title: Home
+  url: /
+- title: About
+  url: /about-our-story.html
+  children:
+    - { title: Our Story,    url: /about-our-story.html }
+    - { title: Our Founder,  url: /about-our-founder.html }
+    - { title: Our Approach, url: /about-our-approach.html }
+- title: Programs
+  url: /residential-housing.html
+  children:
+    - { title: Residential Housing, url: /residential-housing.html }
+    - { title: Clinical Care,       url: /programs-clinical-care.html }
+    - { title: Recovery Program,    url: /programs-recovery-program.html }
+    - { title: "The Clubhouse & Community", url: /programs-clubhouse-community.html, featured: true }
+    - { title: Community for Life™, url: /programs-community-for-life.html }
+- title: Who We Serve
+  url: /who-we-serve.html
+- title: Get Involved
+  url: /get-involved.html
+- title: Donate
+  url: /donate.html
+  class: nav-donate

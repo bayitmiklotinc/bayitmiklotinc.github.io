@@ -1,0 +1,26 @@
+{%- assign org = site.data.site -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "@id": "{{ site.url }}/#organization",
+  "name": "Bayit Miklot",
+  "alternateName": "Bayit Miklot — Home of Refuge",
+  "legalName": {{ org.legal_name | jsonify }},
+  "taxID": {{ org.ein | jsonify }},
+  "nonprofitStatus": "Nonprofit501c3",
+  "url": "{{ site.url }}/",
+  "logo": "{{ site.url }}/assets/logo.png",
+  "description": {{ site.description | strip | jsonify }},
+  "email": {{ org.email | jsonify }},
+  "telephone": {{ org.phone | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": {{ org.city | jsonify }},
+    "addressRegion": {{ org.region_code | jsonify }},
+    "addressCountry": "US"
+  },
+  "areaServed": { "@type": "City", "name": "Dallas, Texas" },
+  "founder": { "@type": "Person", "name": {{ org.founder.name | jsonify }}, "jobTitle": {{ org.founder.title | jsonify }} }
+}
+</script>

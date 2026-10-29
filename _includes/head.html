@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11212B" media="(prefers-color-scheme: dark)">
+{%- if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{%- endif %}
+{% seo %}
+<link rel="alternate" type="application/atom+xml" title="Bayit Miklot Press Releases" href="/press/feed.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/lora-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+{%- if page.hero_image %}
+<link rel="preload" as="image" href="{{ page.hero_image }}" type="image/webp" fetchpriority="high">
+{%- endif %}
+{% include schema.html %}
+{%- comment -%}
+  Google Ads tag, added 2026-07-19 (approval on file).
+  Privacy-first setup: ad personalization is off everywhere, visitors in the
+  EEA, UK and Switzerland default to no ad cookies, and browsers sending the
+  Global Privacy Control signal are treated as opted out.
+{%- endcomment %}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', { ad_personalization: 'denied' });
+  if (navigator.globalPrivacyControl) {
+    gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+  }
+  gtag('set', 'ads_data_redaction', true);
+  gtag('js', new Date());
+  gtag('config', '{{ site.data.site.google_ads_id }}', { allow_ad_personalization_signals: false });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.site.google_ads_id }}"></script>

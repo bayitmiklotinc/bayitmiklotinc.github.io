@@ -1,0 +1,39 @@
+{%- assign here = page.url | replace: 'index.html', '' -%}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="logo" aria-label="Bayit Miklot home">
+      {% include logo.html %}
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-hidden="true" tabindex="-1">
+    <label for="nav-toggle" class="nav-toggle-label" role="button" tabindex="0" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation %}
+        {%- assign active = false -%}
+        {%- if here == item.url -%}{%- assign active = true -%}{%- endif -%}
+        {%- for child in item.children -%}
+          {%- if here == child.url -%}{%- assign active = true -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if item.children %}
+      <div class="has-dropdown">
+        <a href="{{ item.url }}" aria-haspopup="true" aria-expanded="false"{% if active %} class="active"{% endif %}>{{ item.title }}</a>
+        <div class="dropdown">
+          {%- for child in item.children %}
+          {%- assign cls = '' -%}
+          {%- if child.featured -%}{%- assign cls = 'featured' -%}{%- endif -%}
+          {%- if here == child.url -%}{%- assign cls = cls | append: ' active' | strip -%}{%- endif %}
+          <a href="{{ child.url }}"{% if cls != '' %} class="{{ cls }}"{% endif %}{% if here == child.url %} aria-current="page"{% endif %}>{{ child.title | escape }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+        {%- else %}
+        {%- assign cls = item.class | default: '' -%}
+        {%- if active -%}{%- assign cls = cls | append: ' active' | strip -%}{%- endif %}
+      <a href="{{ item.url }}"{% if cls != '' %} class="{{ cls }}"{% endif %}{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endif -%}
+      {%- endfor %}
+    </nav>
+  </div>
+</header>

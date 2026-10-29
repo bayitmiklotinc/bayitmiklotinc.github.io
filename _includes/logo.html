@@ -1,0 +1,7 @@
+{%- comment -%} Logo with a light-lettered version for dark mode. Pass loading="lazy" for the footer. {%- endcomment -%}
+<picture>
+  <source type="image/webp" srcset="/assets/logo-dark.webp" media="(prefers-color-scheme: dark)">
+  <source type="image/png" srcset="/assets/logo-dark.png" media="(prefers-color-scheme: dark)">
+  <source type="image/webp" srcset="/assets/logo.webp">
+  <img src="/assets/logo.png" alt="Bayit Miklot — Home of Refuge" width="1022" height="230"{% if include.loading %} loading="{{ include.loading }}" decoding="async"{% endif %}>
+</picture>

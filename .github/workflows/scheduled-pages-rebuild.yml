@@ -1,0 +1,21 @@
+# Rebuilds the GitHub Pages site every morning, so press releases dated in the
+# future go live on their date without anyone pushing a commit.
+# It can also be run by hand from the repository's Actions tab.
+name: Scheduled Pages rebuild
+
+on:
+  schedule:
+    - cron: "15 13 * * *"   # 13:15 UTC = 8:15 a.m. Dallas (CDT) / 7:15 a.m. (CST)
+  workflow_dispatch: {}
+
+permissions:
+  pages: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request a GitHub Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"

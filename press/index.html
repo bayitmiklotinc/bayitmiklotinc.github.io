@@ -1,0 +1,34 @@
+---
+title: "Press Releases and News"
+description: "Official press releases, announcements, and media contacts for Bayit Miklot, a Jewish recovery and mental health nonprofit in Dallas, Texas."
+---
+{%- assign releases = site.press | sort: "date" | reverse -%}
+<section class="hero">
+  <div class="container-wide">
+    <div class="hero-text">
+      <span class="kicker">Newsroom</span>
+      <h1>Press Releases &amp; News</h1>
+      <p class="lede">Announcements, milestones, and media resources from Bayit Miklot.</p>
+      <p><a href="/press/feed.xml">Subscribe via RSS</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="block on-white">
+  <div class="container">
+    {%- if releases.size == 0 %}
+    <p class="press-empty">No press releases have been published yet. For media inquiries, email <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a> or call <a href="tel:{{ site.data.site.phone }}">{{ site.data.site.phone_display }}</a>.</p>
+    {%- else %}
+    <div class="press-list">
+      {%- for pr in releases %}
+      <a class="press-card" href="{{ pr.url }}">
+        <time datetime="{{ pr.date | date_to_xmlschema }}">{{ pr.date | date: "%B %-d, %Y" }}</time>
+        <h2>{{ pr.title }}</h2>
+        <p>{{ pr.description | default: pr.excerpt | strip_html | truncate: 180 }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="press-empty">Media inquiries: <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a> &middot; <a href="tel:{{ site.data.site.phone }}">{{ site.data.site.phone_display }}</a></p>
+    {%- endif %}
+  </div>
+</section>

@@ -1,0 +1,47 @@
+{%- assign org = site.data.site -%}
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-card">
+          {% include logo.html loading="lazy" %}
+        </div>
+        <p class="footer-tagline">{{ org.tagline }}</p>
+        <p class="footer-endorsement">{{ org.endorsement }}</p>
+        <a href="/donate.html" class="footer-donate">Donate</a>
+      </div>
+      <div class="footer-contact">
+        {%- if page.footer_contact == 'founder' %}
+        <div class="name">{{ org.founder.name }}</div>
+        <div class="role">{{ org.founder.title | escape }}</div>
+        <a href="tel:{{ org.phone }}">{{ org.phone_display }}</a>
+        <a href="mailto:{{ org.founder.email }}">{{ org.founder.email }}</a>
+        {%- else %}
+        <div class="name">Contact Us</div>
+        <div class="role">{{ org.legal_name }}</div>
+        <a href="tel:{{ org.phone }}">{{ org.phone_display }}</a>
+        <a href="mailto:{{ org.email }}">{{ org.email }}</a>
+        {%- endif %}
+        <span class="footer-place">{{ org.city }}, {{ org.region }}</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Bayit Miklot &mdash; Home of Refuge | {{ org.slogan }}</span>
+      <span>&copy; {{ site.time | date: '%Y' }} {{ org.legal_name }} &middot; 501(c)(3) nonprofit organization &middot; EIN {{ org.ein }}</span>
+    </div>
+    <div class="footer-legal">
+      <nav class="footer-policies" aria-label="Legal">
+        <a href="/policies.html">Legal &amp; Privacy</a>
+        <a href="/press/">Press</a>
+      </nav>
+      <div class="footer-cards">
+        <span class="footer-cards-label">We accept</span>
+        <img src="/assets/cards/visa.svg" alt="Visa" width="39" height="25" loading="lazy">
+        <img src="/assets/cards/mastercard.svg" alt="Mastercard" width="39" height="25" loading="lazy">
+        <img src="/assets/cards/discover.svg" alt="Discover" width="39" height="25" loading="lazy">
+        <img src="/assets/cards/amex.svg" alt="American Express" width="39" height="25" loading="lazy">
+      </div>
+    </div>
+    <p class="footer-note">Photos are illustrative and may not depict actual residents.</p>
+  </div>
+</footer>
