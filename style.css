@@ -1524,8 +1524,8 @@ a.pillar-card:hover {
 */
 /* added this css for the background image to show up in the photo quote section */
   background-color: var(--navy);
-  background-image: url('assets/si/img1.png');
-  background-image: image-set(url('assets/si/webp/img1-1440.webp') type('image/webp'), url('assets/si/img1.png') type('image/png'));
+  background-image: url('assets/si/shabbos-dinner-jewish-recovery-community-dallas.png');
+  background-image: image-set(url('assets/si/webp/shabbos-dinner-jewish-recovery-community-dallas-1440.webp') type('image/webp'), url('assets/si/shabbos-dinner-jewish-recovery-community-dallas.png') type('image/png'));
   background-repeat: no-repeat;
   background-position: center; 
   background-size: cover;

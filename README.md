@@ -106,3 +106,14 @@ Put the original in `assets/si/`, then create WebP copies (800px wide, plus
 1600px for large photos) in `assets/si/webp/`. Reference them with a
 `<picture>` element like the existing ones, and include `width`, `height`, and
 `alt` on the `<img>`.
+
+Name every photo for what it shows, because search engines read file names:
+
+- Use lowercase words joined by hyphens, such as
+  `shabbos-table-jewish-recovery-clubhouse.png`.
+- Lead with the subject, then add the program or place when it is accurate
+  (Clubhouse, sober living home, Dallas).
+- Give the WebP copies the same name plus the width, such as
+  `shabbos-table-jewish-recovery-clubhouse-800.webp`.
+- Write alt text as one plain sentence describing the photo. Don't repeat
+  keywords or start with "image of".

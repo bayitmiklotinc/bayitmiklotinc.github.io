@@ -18,7 +18,7 @@ defaults:
   - scope: { path: "" }
     values:
       layout: default
-      image: /assets/og-image.jpg
+      image: /assets/bayit-miklot-jewish-recovery-community-dallas.jpg
   - scope: { path: "", type: press }
     values:
       layout: press-release
