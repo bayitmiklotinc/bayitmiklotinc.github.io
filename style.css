@@ -82,7 +82,7 @@
   --header-h: 111px;
   --nav-gap: clamp(1rem, 1.6vw, 2rem);
 
-  color-scheme: light dark;
+  color-scheme: light;
   accent-color: var(--teal);
 }
 
@@ -1904,37 +1904,21 @@ h1, h2, h3, .tagline, .statement { text-wrap: balance; }
   section, .split-band { break-inside: avoid; }
 }
 
-/* ---------- Dark mode ----------
-   Follows the visitor's system or browser setting. Only role tokens change;
-   brand colors stay for borders, fills and illustrations. The [data-theme]
-   hook allows a manual toggle later without touching these values. */
+/* ---------- Dark mode (designer preview only) ----------
+   Dark mode is OFF for visitors. It applies only when <html> carries
+   data-theme="dark". To preview it:
+     - open any page with ?theme=dark   (stays on in that browser; ?theme=light turns it off)
+     - or in DevTools, add data-theme="dark" to the <html> tag
+   Only role tokens change; brand colors stay for borders, fills and illustrations.
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #11212B;
-    --surface: #182C38;
-    --surface-cream: #14262F;
-    --surface-aqua: #173434;
-    --header-bg: rgba(17, 33, 43, 0.95);
-    --line: #2E4655;
-    --line-strong: #47616F;
-    --text: #DCE7EA;
-    --heading: #F1F6F7;
-    --muted: #A7B4B9;
-    --link: #5FC7B7;
-    --link-hover: #86E0D3;
-    --coral-ink: #F29D91;
-    --btn-navy: #2B5A70;
-    --band: #0D1A22;
-    --band-text: #FFFFFF;
-    --band-muted: #C9D6DA;
-    --band-accent: #86E0D3;
-    --shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
-    --focus: #86E0D3;
-  }
-}
+   To turn dark mode on for everyone later (following each visitor's system
+   setting), wrap the token block below in @media (prefers-color-scheme: dark)
+   using :root as the selector, set color-scheme to "light dark" in :root and in
+   _includes/head.html, and do the same for the logo swap and the
+   [data-theme="dark"] rules at the end of this section. */
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #11212B;
   --surface: #182C38;
   --surface-cream: #14262F;
@@ -1957,13 +1941,21 @@ h1, h2, h3, .tagline, .statement { text-wrap: balance; }
   --focus: #86E0D3;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* Inline SVG illustrations drawn in navy would vanish on dark surfaces */
-  :root:not([data-theme="light"]) svg [stroke="#2F4B60"] { stroke: var(--heading); }
-  :root:not([data-theme="light"]) svg [fill="#2F4B60"] { fill: var(--heading); }
-  /* Soften large photos slightly to reduce glare */
-  :root:not([data-theme="light"]) .picture-frame .frame-image { filter: brightness(0.92); }
-  :root:not([data-theme="light"]) .picture-frame {
-    background: linear-gradient(135deg, #1C3A3A 0%, #24504B 60%, #2D6A62 130%);
-  }
+/* Inline SVG illustrations drawn in navy would vanish on dark surfaces */
+:root[data-theme="dark"] svg [stroke="#2F4B60"] { stroke: var(--heading); }
+:root[data-theme="dark"] svg [fill="#2F4B60"] { fill: var(--heading); }
+
+/* Soften large photos slightly to reduce glare */
+:root[data-theme="dark"] .picture-frame .frame-image { filter: brightness(0.92); }
+:root[data-theme="dark"] .picture-frame {
+  background: linear-gradient(135deg, #1C3A3A 0%, #24504B 60%, #2D6A62 130%);
 }
+
+/* Logo: the light-lettered version shows only in dark preview.
+   The dark logo is lazy-loaded, so normal visitors never download it. */
+.site-header .logo .logo-dark,
+.footer-logo-card .logo-dark { display: none; }
+:root[data-theme="dark"] .logo .logo-light,
+:root[data-theme="dark"] .footer-logo-card .logo-light { display: none; }
+:root[data-theme="dark"] .logo .logo-dark,
+:root[data-theme="dark"] .footer-logo-card .logo-dark { display: block; }

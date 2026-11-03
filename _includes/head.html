@@ -1,8 +1,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#11212B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+{%- comment -%}
+  Dark mode is a designer preview only. ?theme=dark turns it on in this browser
+  (remembered across pages), ?theme=light turns it off. Runs before the
+  stylesheet so the page never flashes light first. See README.md.
+{%- endcomment %}
+<script>try{var t=new URLSearchParams(location.search).get('theme');if(t==='dark')localStorage.setItem('bm-theme','dark');else if(t==='light')localStorage.removeItem('bm-theme');if(localStorage.getItem('bm-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 {%- if page.robots %}
 <meta name="robots" content="{{ page.robots }}">
 {%- endif %}

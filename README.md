@@ -12,7 +12,7 @@ site with Jekyll whenever `main` changes, so there is no separate build step.
 | Shared `<head>`, Google tag, structured data | `_includes/head.html`, `_includes/schema.html` |
 | Header and footer (every page) | `_includes/header.html`, `_includes/footer.html` |
 | Page shell | `_layouts/default.html` |
-| Styles, including dark mode | `style.css` |
+| Styles, including the dark-mode preview | `style.css` |
 | Menu keyboard and touch behavior | `assets/js/site.js` |
 | Optimized photos (WebP) | `assets/si/webp/` (originals stay in `assets/si/`) |
 | Fonts (self-hosted, open license) | `assets/fonts/` |
@@ -34,6 +34,23 @@ bundle exec jekyll serve --livereload
 ```
 
 Then open http://localhost:4000.
+
+## Dark mode (designer preview only)
+
+Dark mode is built but turned off for visitors. Everyone sees the light design,
+even if their device is set to dark.
+
+To review it in your browser:
+
+- **Preview link:** open any page with `?theme=dark` on the end, for example
+  `https://bayitmiklot.com/?theme=dark`. Every page you visit stays dark in that
+  browser until you open any page with `?theme=light`.
+- **DevTools:** in the Elements panel, add `data-theme="dark"` to the `<html>`
+  tag. This lasts until you reload the page.
+
+The dark colors are the `:root[data-theme="dark"]` block near the end of
+`style.css`. The comment above that block explains how to turn dark mode on for
+everyone later, so it follows each visitor's system setting.
 
 ## Add a press release
 
